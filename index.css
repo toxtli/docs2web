@@ -1,0 +1,97 @@
+html,body {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	font-family: 'Poppins', sans-serif;
+	background: var(--middle);
+	color: var(--font);
+}
+
+.Template_0 {
+	--top: #2B2B3A;
+	--middle: #254558; 
+	--normal: #1ED2F4;
+	--hover: #EAFC40;
+	--alt: #F5CE28;
+	--logo: white;
+	--player: white;
+	--font: white;
+	--fontHover: black;
+}
+
+a, .Link {
+     cursor: pointer;
+     color: var(--hover);
+     text-decoration: underline;
+}
+
+a:hover, .Link:hover {
+     text-decoration: none;
+}
+
+.Icon_Back {
+	top: 30px;
+	left: 30px;
+	font-size: 32px;
+}
+
+.Section {
+	width: 80%;
+	height: 100%;
+}
+
+.Index_Section {
+	display: flex;
+	margin: auto;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.Section_Link {
+	font-size: 36px;
+}
+
+.Index_Content {
+
+}
+
+.Index_Menu {
+
+}
+
+.Index_Title {
+	font-size: 48px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.Page_Container {
+	margin: auto;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.Page_Content {
+
+}
+
+.Section_Title {
+	font-size: 36px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.Section_Content {
+	font-size: 18px;
+}
+
+.Subsection_Title {
+	font-size: 28px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.Subsection_Content {
+	font-size: 18px;
+}

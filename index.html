@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="Website_App" ng-controller="Website_Controller">
+    <head>
+        <title>{{data.title}}</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./index.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.js"></script>
+        <script src="./config.js"></script>
+        <script src="./index.js"></script>
+    </head>
+    <body class="Template_0">
+        <div class="Index_Section Section">
+        	<div class="Index_Content">
+	        	<div class="Index_Title">{{data.title}}</div>
+	        	<br><hr><br>
+	        	<div class="Index_Menu">
+		        	<div id="index_{{i}}" class="Section_Link Link" ng-repeat="(i, page) in data.sections">{{page.title}}</div>
+		    	</div>
+	    	</div>
+        </div>
+        <div id="section_{{i}}" class="Page_Container Section" ng-repeat="(i, section) in data.sections" hidden>
+        	<div class="Icon_Back Back fa fa-chevron-circle-left"></div>
+        	<div class="Page_Content">
+	        	<div class="Section_Title">{{section.title}}</div>
+	        	<hr>
+	        	<div class="Section_Content" ng-bind-html="section.content"></div>
+	        	<div class="Subsection_Container" ng-repeat="subsection in section.sections">
+	        		<div class="Subsection_Title">{{subsection.title}}</div>
+	        		<hr>
+		            <div class="Subsection_Content" ng-bind-html="subsection.content"></div>
+	        	</div>
+        	</div>
+        </div>
+        <div id="temp" hidden>
+        </div>
+        
+    </body>
+</html>
