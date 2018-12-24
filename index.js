@@ -4,7 +4,9 @@ app.controller('Website_Controller', function($scope, $http) {
 		var params = getHashParams();
 		if (params.hasOwnProperty('id')) {
 			config.url = 'https://docs.google.com/document/d/e/' + params['id'] + '/pub?embedded=true';
-		} 
+		} else if (params.hasOwnProperty('url')) {
+			config.url = params['url'] + '?embedded=true';
+		}
 	}
 	$http.get(config.url).success(function (response) {
 		var data = formatContent(response);
