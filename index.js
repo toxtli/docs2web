@@ -44,14 +44,8 @@ $(() => {
 	});
 	$('#generate').on('click', (element) => {
 		var url = $('#urlBox').val();
-		url += '?embedded=true'
-		http.get(url).success(function (response) {
-			var data = formatContent(response);
-			scope.data = data;
-		});
-		$('#instructions').addClass('Hidden');
-		$('.Section').addClass('Hidden');
-		$('.Index_Section').removeClass('Hidden');
+		window.location.href += "#url=" + url;
+		location.reload();
 	});
 });
 
