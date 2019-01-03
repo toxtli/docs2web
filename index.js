@@ -1,5 +1,13 @@
 var app = angular.module('Website_App', ['ngSanitize']);
+var scope = null;
+var http = null;
 app.controller('Website_Controller', function($scope, $http) {
+	scope = $scope;
+	http = $http;
+	var loadUrl = false;
+	if (config.url != null) {
+		config.url = config.url + '?embedded=true';
+	}
 	if(window.location.hash) {
 		var params = getHashParams();
 		if (params.hasOwnProperty('id')) {
@@ -8,22 +16,43 @@ app.controller('Website_Controller', function($scope, $http) {
 			config.url = params['url'] + '?embedded=true';
 		}
 	}
-	$http.get(config.url).success(function (response) {
-		var data = formatContent(response);
-		$scope.data = data;
-	});
+	if (config.url == null) {
+		$('#instructions').removeClass('Hidden');
+	} else {
+		$('#instructions').addClass('Hidden');
+		loadUrl = true;
+	}
+	if (loadUrl) {
+		$http.get(config.url).success(function (response) {
+			var data = formatContent(response);
+			$scope.data = data;
+			$('.Section').addClass('Hidden');
+			$('.Index_Section').removeClass('Hidden');
+		});
+	}
 });
 
 $(() => {
 	$(document).on('click', '.Section_Link', (element) => {
 		var sectionId = element.target.id.split('_').pop();
-		$('.Section').hide();
-		$('#section_' + sectionId).show();
+		$('.Section').addClass('Hidden');
+		$('#section_' + sectionId).removeClass('Hidden');
 	});
 	$(document).on('click', '.Back', (element) => {
-		$('.Section').hide();
-		$('.Index_Section').show();
-	});	
+		$('.Section').addClass('Hidden');
+		$('.Index_Section').removeClass('Hidden');
+	});
+	$('#generate').on('click', (element) => {
+		var url = $('#urlBox').val();
+		url += '?embedded=true'
+		http.get(url).success(function (response) {
+			var data = formatContent(response);
+			scope.data = data;
+		});
+		$('#instructions').addClass('Hidden');
+		$('.Section').addClass('Hidden');
+		$('.Index_Section').removeClass('Hidden');
+	});
 });
 
 function convertToHTML(elements) {

@@ -4,6 +4,7 @@
         <title>{{data.title}}</title>
         <meta content="text/html; charset=UTF-8" http-equiv="content-type">
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./index.css">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -13,7 +14,43 @@
         <script src="./index.js"></script>
     </head>
     <body class="Template_0">
-        <div class="Index_Section Section">
+    	<div id="instructions" class="Instructions_Section Section Hidden">
+        	<div>
+	        	<div class="Index_Title">
+	        		<img src='//carlostoxtli.com/files/docs2web-logo.png'>
+	        	</div>
+	        	<hr>
+	        	<div class="Index_Menu">
+	        		<center>
+		        		<div class="Section_Content">
+		        			Docs2Web turns any Google Docs document into a modern website.<br><br>
+		        			INSTRUCTIONS:
+		        		</div>
+	        			<div class='grid-container'>
+		        			<div class='grid-cell'>
+		        				<b>Step 1</b>: Set styles to the titles and subtitles as it is shown in the image bellow (at least you must to set one "Title" and one "Heading 1" style.)
+		        			</div>
+		        			<div class='grid-cell'>
+		        				<b>Step 2</b>: Publish your document by clicking on "<b>File</b> > <b>Publish to the web</b> > <b>Publish</b>", and copy the generated URL as is shown in the image bellow.
+		        			</div>
+		        			<div class='grid-cell'>
+		        				<img width="370" src='//carlostoxtli.com/files/docs2web-format.png'>
+		        			</div>
+		        			<div class='grid-cell'>
+		        				<img width="370" src='//carlostoxtli.com/files/docs2web-instructions.png'>
+		        			</div>
+	        			</div>
+		        		<div class="Section_Content">
+		        			Paste your public URL here:
+		        		</div>
+			        	<input type="text" id="urlBox" size="60" placeholder="https://docs.google.com/document/d/e/[YOUR_ID]/pub">
+			        	<br><br>
+			        	<button class="w3-btn w3-block w3-teal" id="generate">GENERATE</button>
+		        	</center>
+		    	</div>
+	    	</div>
+    	</div>
+        <div class="Index_Section Section Hidden">
         	<div class="Index_Content">
 	        	<div class="Index_Title">{{data.title}}</div>
 	        	<br><hr><br>
@@ -22,7 +59,7 @@
 		    	</div>
 	    	</div>
         </div>
-        <div id="section_{{i}}" class="Page_Container Section" ng-repeat="(i, section) in data.sections" hidden>
+        <div id="section_{{i}}" class="Page_Container Section Hidden" ng-repeat="(i, section) in data.sections">
         	<div class="Icon_Back Back fa fa-chevron-circle-left"></div>
         	<div class="Page_Content">
 	        	<div class="Section_Title">{{section.title}}</div>
