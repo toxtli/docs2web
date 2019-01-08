@@ -46,6 +46,7 @@ a:hover, .Link:hover {
 	margin: auto;
   	justify-content: center;
   	align-items: center;
+  	overflow: auto;
 }
 
 .Instructions_Section {
