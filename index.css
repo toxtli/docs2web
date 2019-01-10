@@ -136,3 +136,27 @@ hr {
 .Hidden {
 	display: none;
 }
+
+.Level_0 {
+	margin-left: 0px;
+}
+
+.Level_1 {
+	margin-left: 40px;
+}
+
+.Level_2 {
+	margin-left: 80px;
+}
+
+.Level_3 {
+	margin-left: 120px;
+}
+
+.Level_4 {
+	margin-left: 160px;
+}
+
+.Level_5 {
+	margin-left: 200px;
+}

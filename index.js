@@ -64,6 +64,23 @@ function reformatContent(container) {
 			$(element).attr('target', '_blank');
 		}
 	});
+	console.log('UL');
+	$(container + ' ul').each((index, element) => {
+		var classes = $(element).attr('class');
+		if (classes.indexOf('-0') != -1) {
+			$(element).find('li').addClass('Level_0');
+		} else if (classes.indexOf('-1') != -1) {
+			$(element).find('li').addClass('Level_1');
+		} else if (classes.indexOf('-2') != -1) {
+			$(element).find('li').addClass('Level_2');
+		} else if (classes.indexOf('-3') != -1) {
+			$(element).find('li').addClass('Level_3');
+		} else if (classes.indexOf('-4') != -1) {
+			$(element).find('li').addClass('Level_4');
+		} else if (classes.indexOf('-5') != -1) {
+			$(element).find('li').addClass('Level_5');
+		}
+	});
 }
 
 function getHashParams() {
