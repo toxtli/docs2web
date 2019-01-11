@@ -45,8 +45,7 @@ a:hover, .Link:hover {
 	display: flex;
 	margin: auto;
   	justify-content: center;
-  	align-items: center;
-  	overflow: auto;
+  	align-content: center;
 }
 
 .Instructions_Section {
@@ -54,6 +53,9 @@ a:hover, .Link:hover {
 	margin: auto;
   	justify-content: center;
   	align-items: center;
+}
+
+.Instructions_Container {
 }
 
 .Section_Link {
@@ -159,4 +161,8 @@ hr {
 
 .Level_5 {
 	margin-left: 200px;
+}
+
+.Extra_Small {
+	font-size: 9px;
 }
